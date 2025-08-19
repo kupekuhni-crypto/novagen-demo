@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI‑видео — превью и кредиты</title>
+  <meta name="description" content="Генерируйте AI‑видео за минуты. Наведите на превью — ролики запускаются. Покупайте кредиты и оплачивайте только рендеры." />
+  <meta property="og:title" content="AI‑видео — превью и кредиты" />
+  <meta property="og:description" content="Видео‑превью на hover. Прозрачные кредиты. Быстрые превью и безопасные платежи." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+          colors: {
+            bg: '#0A0A0B',
+            card: '#111114',
+            line: '#1A1A1F',
+            accent: '#8B5CF6',
+            accent2: '#22D3EE'
+          },
+          boxShadow: { glow: '0 0 40px rgba(139,92,246,0.25)', soft: '0 10px 30px rgba(0,0,0,.35)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth }
+    .gradient {
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(139,92,246,.25), transparent),
+        radial-gradient(1000px 500px at 90% -20%, rgba(34,211,238,.20), transparent)
+    }
+    .ribbon { position:absolute; top:12px; right:12px; font-size:11px; padding:4px 8px; border-radius:999px; background:linear-gradient(90deg,#8B5CF6,#22D3EE); color:#000; font-weight:600 }
+  </style>
+
+  <!-- Микроразметка пакетов -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Кредиты для генерации AI‑видео",
+    "description":"Покупайте кредиты и оплачивайте только рендеры.",
+    "brand":{"@type":"Brand","name":"NovaGen"},
+    "offers":{
+      "@type":"AggregateOffer",
+      "priceCurrency":"RUB","lowPrice":"490","highPrice":"4900","offerCount":"3",
+      "offers":[
+        {"@type":"Offer","name":"Start","price":"490","priceCurrency":"RUB","sku":"start-600"},
+        {"@type":"Offer","name":"Pro","price":"1490","priceCurrency":"RUB","sku":"pro-2100"},
+        {"@type":"Offer","name":"Business","price":"4900","priceCurrency":"RUB","sku":"biz-8000"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-bg text-white font-sans gradient">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-black/40 backdrop-blur border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a class="flex items-center gap-2" href="#">
+        <span class="h-6 w-6 rounded bg-gradient-to-tr from-accent to-accent2 inline-block"></span>
+        <span class="font-semibold">NovaGen</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="#showcase" class="hover:text-white">Превью</a>
+        <a href="#pricing" class="hover:text-white">Цены</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </nav>
+      <button id="openCheckoutTop" class="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md font-medium">
+        Купить кредиты
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-gray-200 ring-1 ring-white/15">
+          ⚡ Быстрые превью • ▶ Автоплей на наведении • 🔒 3‑D Secure
+        </div>
+        <h1 class="mt-4 text-4xl md:text-6xl font-semibold leading-tight">
+          Генерируйте AI‑видео за минуты. Превью — сразу при наведении.
+        </h1>
+        <p class="mt-4 text-lg text-gray-300">
+          Покупайте кредиты и оплачивайте только рендеры. Прозрачные списания и быстрая отдача результатов.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#showcase" class="px-6 py-3 rounded-md border border-white/20 hover:bg-white/10">Смотреть превью</a>
+          <a href="#pricing" class="bg-white text-black px-6 py-3 rounded-md font-medium">Купить кредиты</a>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden border border-line bg-card shadow-soft aspect-video">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline
+               poster="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1280&auto=format&fit=crop">
+          <source src="https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-8427/1080p.mp4" type="video/mp4">
+        </video>
+        <div class="absolute bottom-3 left-3 right-3 text-xs text-gray-300 flex items-center justify-between">
+          <span>Демо превью · замените на свой ролик</span>
+          <span class="px-2 py-1 rounded bg-black/50 border border-white/10">0:12</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase with hover autoplay -->
+  <section id="showcase" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold">Что можно сгенерировать</h2>
+        <p class="mt-2 text-gray-400">Наведите курсор — превью запустится. На мобильных — по тапу.</p>
+      </div>
+      <a href="#pricing" class="hidden md:inline-flex px-4 py-2 rounded-md border border-white/20 hover:bg-white/10">Купить кредиты</a>
+    </div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+        <div class="relative aspect-video">
+          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+                 poster="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1200&auto=format&fit=crop">
+            <source src="https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-8427/1080p.mp4" type="video/mp4">
+          </video>
+          <button class="absolute right-3 bottom-3 z-10 rounded-full bg-black/60 px-3 py-1 text-xs text-white/90 border border-white/10 opacity-0 group-hover:opacity-100 transition">
+            ▶ Смотреть превью
+          </button>
+        </div>
+        <div class="p-4">
+          <h3 class="font-medium">Промо‑ролик для маркетплейса</h3>
+          <p class="mt-1 text-sm text-gray-400">10–15 сек, 1080p, пресеты бренда</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-xs text-gray-400">~ 45 кр./ролик</div>
+            <button class="selectPlan inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm text-black"
+                    data-sku="start-600" data-price="490" data-credits="600">Купить кредиты</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+        <div class="relative aspect-video">
+          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+                 poster="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&auto=format&fit=crop">
+            <source src="https://cdn.coverr.co/videos/coverr-a-person-using-a-laptop-1539/1080p.mp4" type="video/mp4">
+          </video>
+          <button class="absolute right-3 bottom-3 z-10 rounded-full bg-black/60 px-3 py-1 text-xs text-white/90 border border-white/10 opacity-0 group-hover:opacity-100 transition">
+            ▶ Смотреть превью
+          </button>
+        </div>
+        <div class="p-4">
+          <h3 class="font-medium">UGC‑видео для соцсетей</h3>
+          <p class="mt-1 text-sm text-gray-400">9:16, 8–12 сек, субтитры</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-xs text-gray-400">~ 30 кр./ролик</div>
+            <button class="selectPlan inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm text-black"
+                    data-sku="pro-2100" data-price="1490" data-credits="2100">Купить кредиты</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+        <div class="relative aspect-video">
+          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+                 poster="https://images.unsplash.com/photo-1485841890310-6a055c88698a?w=1200&auto=format&fit=crop">
+            <source src="https://cdn.coverr.co/videos/coverr-a-programmer-coding-on-his-computer-2790/1080p.mp4" type="video/mp4">
+          </video>
+          <button class="absolute right-3 bottom-3 z-10 rounded-full bg-black/60 px-3 py-1 text-xs text-white/90 border border-white/10 opacity-0 group-hover:opacity-100 transition">
+            ▶ Смотреть превью
+          </button>
+        </div>
+        <div class="p-4">
+          <h3 class="font-medium">Баннер‑видео для сайта</h3>
+          <p class="mt-1 text-sm text-gray-400">Луп 6–8 сек, 1080p / 4K</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-xs text-gray-400">~ 25 кр./ролик</div>
+            <button class="selectPlan inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm text-black"
+                    data-sku="biz-8000" data-price="4900" data-credits="8000">Купить кредиты</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-7xl mx-auto px-4 py-10 md:py-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-semibold">Кредиты и тарифы</h2>
+      <p class="mt-3 text-gray-400">1 кр. = 1 сек @512p. 720p ×2, 1080p ×3, 4K ×6. Ускоренный рендер ×1.5</p>
+      <div class="mt-4 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full p-1 text-xs">
+        <button id="btnB2C" class="px-3 py-1 rounded-full bg-white text-black">Физлицо</button>
+        <button id="btnB2B" class="px-3 py-1 rounded-full text-white/80">Юрлицо</button>
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <!-- Start -->
+      <div class="relative rounded-2xl bg-card border border-line p-6">
+        <div class="text-sm text-gray-400">Start</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="price" data-b2c="490 ₽" data-b2b="490 ₽ без НДС">490 ₽</span>
+        </div>
+        <div class="mt-1 text-gray-400">600 кредитов</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>• Экспорт без водяных знаков</li>
+          <li>• 720p, 1080p с коэффициентом</li>
+          <li>• Базовая поддержка</li>
+        </ul>
+        <button class="selectPlan mt-6 w-full bg-white text-black px-4 py-3 rounded-md" data-sku="start-600" data-price="490" data-credits="600">Выбрать</button>
+      </div>
+
+      <!-- Pro -->
+      <div class="relative rounded-2xl bg-card border border-accent/40 p-6 shadow-glow">
+        <div class="ribbon">Самый популярный</div>
+        <div class="text-sm text-gray-400">Pro</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="price" data-b2c="1 490 ₽" data-b2b="1 490 ₽ без НДС">1 490 ₽</span>
+        </div>
+        <div class="mt-1 text-gray-400">2 100 кредитов</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>• Приоритет в очереди</li>
+          <li>• Ускоренные превью</li>
+          <li>• Поддержка в Telegram</li>
+        </ul>
+        <button class="selectPlan mt-6 w-full bg-white text-black px-4 py-3 rounded-md" data-sku="pro-2100" data-price="1490" data-credits="2100">Выбрать</button>
+      </div>
+
+      <!-- Business -->
+      <div class="relative rounded-2xl bg-card border border-line p-6">
+        <div class="text-sm text-gray-400">Business</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="price" data-b2c="4 900 ₽" data-b2b="4 900 ₽ без НДС">4 900 ₽</span>
+        </div>
+        <div class="mt-1 text-gray-400">8 000 кредитов</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>• Приоритетная очередь</li>
+          <li>• API‑доступ</li>
+          <li>• Командные роли</li>
+        </ul>
+        <button class="selectPlan mt-6 w-full bg-white text-black px-4 py-3 rounded-md" data-sku="biz-8000" data-price="4900" data-credits="8000">Выбрать</button>
+      </div>
+    </div>
+
+    <div class="mt-6 text-sm text-gray-400 text-center">
+      Для юрлиц — счёт и закрывающие документы. НДС — по договорённости.
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-7xl mx-auto px-4 py-10 md:py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center">FAQ о кредитах</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <details class="rounded-2xl border border-line bg-card p-5">
+        <summary class="cursor-pointer font-medium">Как списываются кредиты?</summary>
+        <p class="text-gray-400 mt-3">1 кр. = 1 сек @512p. 720p ×2, 1080p ×3, 4K ×6. Ускоренный рендер ×1.5. Перед запуском показываем точное списание.</p>
+      </details>
+      <details class="rounded-2xl border border-line bg-card p-5">
+        <summary class="cursor-pointer font-medium">Можно ли вернуть?</summary>
+        <p class="text-gray-400 mt-3">Если рендер завершился с ошибкой — кредиты возвращаются автоматически. Неиспользованные кредиты по первому заказу можем вернуть в течение 7 дней.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-line">
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="h-6 w-6 rounded bg-gradient-to-tr from-accent to-accent2 inline-block"></span>
+        <span class="text-sm text-gray-400">© 2025 NovaGen</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-400">
+        <a href="#" class="hover:text-white">Политика</a>
+        <a href="#" class="hover:text-white">Оферта</a>
+        <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky checkout bar -->
+  <div id="stickyBar" class="fixed left-0 right-0 bottom-0 translate-y-full transition-transform duration-300 z-50">
+    <div class="max-w-7xl mx-auto px-4 pb-4">
+      <div class="rounded-2xl bg-black/80 backdrop-blur border border-white/10 p-4 shadow-soft">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <div class="flex items-center gap-4">
+            <div class="h-10 w-10 rounded bg-gradient-to-tr from-accent to-accent2"></div>
+            <div>
+              <div class="text-sm text-gray-400">Вы выбрали</div>
+              <div id="barTitle" class="text-lg font-semibold">—</div>
+              <div id="barDetails" class="text-sm text-gray-400">—</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-sm text-gray-400">К оплате</div>
+            <div id="barPrice" class="text-2xl font-semibold">—</div>
+            <div class="text-xs text-gray-400">🔒 3‑D Secure · ↩️ Возврат кредитов при сбое</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="checkoutBtn" class="bg-white text-black px-5 py-3 rounded-md font-medium">Оплатить</button>
+            <button id="closeBar" class="px-4 py-3 rounded-md border border-white/20 hover:bg-white/10">Отменить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Hover autoplay for preview cards
+    const cards = document.querySelectorAll('.preview-card');
+    const isFinePointer = matchMedia('(pointer:fine)').matches;
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const video = e.target.querySelector('video.preview-video');
+        if (!video) return;
+        if (!e.isIntersecting) { video.pause(); video.currentTime = 0; }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      const video = card.querySelector('video.preview-video');
+      if (!video) return;
+      io.observe(card);
+
+      if (isFinePointer) {
+        card.addEventListener('mouseenter', async () => { try { video.muted = true; await video.play(); } catch(_) {} });
+        card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      } else {
+        card.addEventListener('click', async () => {
+          if (video.paused) { try { video.muted = true; await video.play(); } catch(_) {} }
+          else { video.pause(); video.currentTime = 0; }
+        });
+      }
+    });
+
+    // Pricing mode toggle (B2C/B2B)
+    const btnB2C = document.getElementById('btnB2C');
+    const btnB2B = document.getElementById('btnB2B');
+    function updateMode(mode) {
+      btnB2C.classList.toggle('bg-white', mode==='b2c'); btnB2C.classList.toggle('text-black', mode==='b2c');
+      btnB2B.classList.toggle('bg-white', mode==='b2b'); btnB2B.classList.toggle('text-black', mode==='b2b');
+      document.querySelectorAll('.price').forEach(el => { el.textContent = el.getAttribute(mode==='b2b' ? 'data-b2b' : 'data-b2c'); });
+      window.__mode = mode;
+    }
+    btnB2C?.addEventListener('click', ()=>updateMode('b2c'));
+    btnB2B?.addEventListener('click', ()=>updateMode('b2b'));
+    updateMode('b2c');
+
+    // Sticky checkout bar
+    const bar = document.getElementById('stickyBar');
+    const barTitle = document.getElementById('barTitle');
+    const barDetails = document.getElementById('barDetails');
+    const barPrice = document.getElementById('barPrice');
+
+    function openBar(sel) {
+      barTitle.textContent = `${sel.title} — ${new Intl.NumberFormat('ru-RU').format(sel.credits)} кр.`;
+      barDetails.textContent = `SKU ${sel.sku}`;
+      barPrice.textContent = window.__mode === 'b2b' ? `${sel.price.toLocaleString('ru-RU')} ₽ без НДС` : `${sel.price.toLocaleString('ru-RU')} ₽`;
+      bar.style.transform = 'translateY(0)';
+      window.__selected = sel;
+    }
+    function closeBar() { bar.style.transform = 'translateY(100%)'; }
+    document.getElementById('closeBar')?.addEventListener('click', closeBar);
+
+    document.querySelectorAll('.selectPlan').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const card = btn.closest('.relative.p-6') || btn.closest('.preview-card') || document;
+        const titleEl = card.querySelector('.text-sm.text-gray-400,.font-medium');
+        const title = titleEl ? titleEl.textContent.trim() : 'Пакет';
+        const sel = {
+          sku: btn.getAttribute('data-sku'),
+          title: title.includes('Start')||title.includes('Pro')||title.includes('Business') ? title : (btn.getAttribute('data-sku') || 'Пакет'),
+          price: Number(btn.getAttribute('data-price')),
+          credits: Number(btn.getAttribute('data-credits'))
+        };
+        openBar(sel);
+      });
+    });
+    document.getElementById('openCheckoutTop')?.addEventListener('click', ()=>{
+      openBar({ sku:'pro-2100', title:'Pro', price:1490, credits:2100 });
+    });
+
+    document.getElementById('checkoutBtn')?.addEventListener('click', ()=>{
+      if (!window.__selected) return;
+      alert(
+        `Чекаут (демо)\nПакет: ${window.__selected.title}\nКредитов: ${window.__selected.credits}\nСумма: ${window.__selected.price.toLocaleString('ru-RU')} ₽\n\nДальше подключим оплату (СБП/ЮKassa/CloudPayments) и автозачисление кредитов.`
+      );
+    });
+
+    // Init
+    bar.style.transform = 'translateY(100%)';
+  </script>
+</body>
+</html>
