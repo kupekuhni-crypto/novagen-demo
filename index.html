@@ -37,9 +37,14 @@
         radial-gradient(1000px 500px at 90% -20%, rgba(34,211,238,.20), transparent)
     }
     .ribbon { position:absolute; top:12px; right:12px; font-size:11px; padding:4px 8px; border-radius:999px; background:linear-gradient(90deg,#8B5CF6,#22D3EE); color:#000; font-weight:600 }
+    /* reveal + hover */
+    .reveal{opacity:0;transform:translateY(16px);transition:all .6s cubic-bezier(.2,.65,.3,1)}
+    .revealed{opacity:1;transform:none}
+    .card-hover{transition:transform .3s ease,border-color .3s ease}
+    .card-hover:hover{transform:translateY(-4px);border-color:#ffffff26}
   </style>
 
-  <!-- Микроразметка пакетов -->
+  <!-- JSON-LD для пакетов -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -79,7 +84,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10">
+  <section class="max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 reveal">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-gray-200 ring-1 ring-white/15">
@@ -97,7 +102,7 @@
         </div>
       </div>
       <div class="relative rounded-2xl overflow-hidden border border-line bg-card shadow-soft aspect-video">
-        <video class="w-full h-full object-cover" autoplay muted loop playsinline
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline webkit-playsinline
                poster="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1280&auto=format&fit=crop">
           <source src="https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-8427/1080p.mp4" type="video/mp4">
         </video>
@@ -110,7 +115,7 @@
   </section>
 
   <!-- Showcase with hover autoplay -->
-  <section id="showcase" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
+  <section id="showcase" class="max-w-7xl mx-auto px-4 py-12 md:py-16 reveal">
     <div class="flex items-end justify-between gap-4">
       <div>
         <h2 class="text-3xl md:text-4xl font-semibold">Что можно сгенерировать</h2>
@@ -120,12 +125,13 @@
     </div>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Card 1 -->
-      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+      <!-- Card 1 (тестовый mp4 для надёжного автоплея) -->
+      <article class="preview-card card-hover group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 reveal">
         <div class="relative aspect-video">
-          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+          <video class="preview-video absolute inset-0 h-full w-full object-cover"
+                 preload="metadata" playsinline webkit-playsinline muted loop
                  poster="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1200&auto=format&fit=crop">
-            <source src="https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-8427/1080p.mp4" type="video/mp4">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
           </video>
           <button class="absolute right-3 bottom-3 z-10 rounded-full bg-black/60 px-3 py-1 text-xs text-white/90 border border-white/10 opacity-0 group-hover:opacity-100 transition">
             ▶ Смотреть превью
@@ -143,9 +149,10 @@
       </article>
 
       <!-- Card 2 -->
-      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+      <article class="preview-card card-hover group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 reveal">
         <div class="relative aspect-video">
-          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+          <video class="preview-video absolute inset-0 h-full w-full object-cover"
+                 preload="metadata" playsinline webkit-playsinline muted loop
                  poster="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&auto=format&fit=crop">
             <source src="https://cdn.coverr.co/videos/coverr-a-person-using-a-laptop-1539/1080p.mp4" type="video/mp4">
           </video>
@@ -165,9 +172,10 @@
       </article>
 
       <!-- Card 3 -->
-      <article class="preview-card group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+      <article class="preview-card card-hover group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 reveal">
         <div class="relative aspect-video">
-          <video class="preview-video absolute inset-0 h-full w-full object-cover" preload="metadata" playsinline muted loop
+          <video class="preview-video absolute inset-0 h-full w-full object-cover"
+                 preload="metadata" playsinline webkit-playsinline muted loop
                  poster="https://images.unsplash.com/photo-1485841890310-6a055c88698a?w=1200&auto=format&fit=crop">
             <source src="https://cdn.coverr.co/videos/coverr-a-programmer-coding-on-his-computer-2790/1080p.mp4" type="video/mp4">
           </video>
@@ -189,7 +197,7 @@
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="max-w-7xl mx-auto px-4 py-10 md:py-16">
+  <section id="pricing" class="max-w-7xl mx-auto px-4 py-10 md:py-16 reveal">
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-semibold">Кредиты и тарифы</h2>
       <p class="mt-3 text-gray-400">1 кр. = 1 сек @512p. 720p ×2, 1080p ×3, 4K ×6. Ускоренный рендер ×1.5</p>
@@ -201,7 +209,7 @@
 
     <div class="mt-10 grid md:grid-cols-3 gap-6">
       <!-- Start -->
-      <div class="relative rounded-2xl bg-card border border-line p-6">
+      <div class="relative rounded-2xl bg-card border border-line p-6 reveal">
         <div class="text-sm text-gray-400">Start</div>
         <div class="mt-1 text-3xl font-semibold">
           <span class="price" data-b2c="490 ₽" data-b2b="490 ₽ без НДС">490 ₽</span>
@@ -216,7 +224,7 @@
       </div>
 
       <!-- Pro -->
-      <div class="relative rounded-2xl bg-card border border-accent/40 p-6 shadow-glow">
+      <div class="relative rounded-2xl bg-card border border-accent/40 p-6 shadow-glow reveal">
         <div class="ribbon">Самый популярный</div>
         <div class="text-sm text-gray-400">Pro</div>
         <div class="mt-1 text-3xl font-semibold">
@@ -232,7 +240,7 @@
       </div>
 
       <!-- Business -->
-      <div class="relative rounded-2xl bg-card border border-line p-6">
+      <div class="relative rounded-2xl bg-card border border-line p-6 reveal">
         <div class="text-sm text-gray-400">Business</div>
         <div class="mt-1 text-3xl font-semibold">
           <span class="price" data-b2c="4 900 ₽" data-b2b="4 900 ₽ без НДС">4 900 ₽</span>
@@ -253,14 +261,14 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="max-w-7xl mx-auto px-4 py-10 md:py-16">
+  <section id="faq" class="max-w-7xl mx-auto px-4 py-10 md:py-16 reveal">
     <h2 class="text-2xl md:text-3xl font-semibold text-center">FAQ о кредитах</h2>
     <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <details class="rounded-2xl border border-line bg-card p-5">
+      <details class="rounded-2xl border border-line bg-card p-5 reveal">
         <summary class="cursor-pointer font-medium">Как списываются кредиты?</summary>
         <p class="text-gray-400 mt-3">1 кр. = 1 сек @512p. 720p ×2, 1080p ×3, 4K ×6. Ускоренный рендер ×1.5. Перед запуском показываем точное списание.</p>
       </details>
-      <details class="rounded-2xl border border-line bg-card p-5">
+      <details class="rounded-2xl border border-line bg-card p-5 reveal">
         <summary class="cursor-pointer font-medium">Можно ли вернуть?</summary>
         <p class="text-gray-400 mt-3">Если рендер завершился с ошибкой — кредиты возвращаются автоматически. Неиспользованные кредиты по первому заказу можем вернуть в течение 7 дней.</p>
       </details>
@@ -311,90 +319,120 @@
 
   <!-- Scripts -->
   <script>
-    // Hover autoplay for preview cards
-    const cards = document.querySelectorAll('.preview-card');
-    const isFinePointer = matchMedia('(pointer:fine)').matches;
+    document.addEventListener('DOMContentLoaded', () => {
+      // Reveal на скролле
+      const revealTargets = document.querySelectorAll('section, article.preview-card, #pricing .relative');
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      revealTargets.forEach(el => { el.classList.add('reveal'); ro.observe(el); });
 
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        const video = e.target.querySelector('video.preview-video');
-        if (!video) return;
-        if (!e.isIntersecting) { video.pause(); video.currentTime = 0; }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => {
-      const video = card.querySelector('video.preview-video');
-      if (!video) return;
-      io.observe(card);
-
-      if (isFinePointer) {
-        card.addEventListener('mouseenter', async () => { try { video.muted = true; await video.play(); } catch(_) {} });
-        card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
-      } else {
-        card.addEventListener('click', async () => {
-          if (video.paused) { try { video.muted = true; await video.play(); } catch(_) {} }
-          else { video.pause(); video.currentTime = 0; }
+      // Превью-видео: hover (desktop), tap (mobile). Сброс вне экрана.
+      const isTouch = matchMedia('(hover:none), (pointer:coarse)').matches;
+      const cards = document.querySelectorAll('.preview-card');
+      const vo = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          const video = e.target.querySelector('video.preview-video');
+          if (!video) return;
+          if (!e.isIntersecting) { video.pause(); try{ video.currentTime = 0; }catch{} }
         });
-      }
-    });
+      }, { threshold: 0.2 });
 
-    // Pricing mode toggle (B2C/B2B)
-    const btnB2C = document.getElementById('btnB2C');
-    const btnB2B = document.getElementById('btnB2B');
-    function updateMode(mode) {
-      btnB2C.classList.toggle('bg-white', mode==='b2c'); btnB2C.classList.toggle('text-black', mode==='b2c');
-      btnB2B.classList.toggle('bg-white', mode==='b2b'); btnB2B.classList.toggle('text-black', mode==='b2b');
-      document.querySelectorAll('.price').forEach(el => { el.textContent = el.getAttribute(mode==='b2b' ? 'data-b2b' : 'data-b2c'); });
-      window.__mode = mode;
-    }
-    btnB2C?.addEventListener('click', ()=>updateMode('b2c'));
-    btnB2B?.addEventListener('click', ()=>updateMode('b2b'));
-    updateMode('b2c');
+      cards.forEach(card => {
+        const video = card.querySelector('video.preview-video');
+        if (!video) return;
 
-    // Sticky checkout bar
-    const bar = document.getElementById('stickyBar');
-    const barTitle = document.getElementById('barTitle');
-    const barDetails = document.getElementById('barDetails');
-    const barPrice = document.getElementById('barPrice');
+        // Флаги для автоплея
+        video.muted = true;
+        video.setAttribute('muted','');
+        video.setAttribute('playsinline','');
+        video.setAttribute('webkit-playsinline','');
+        video.preload = 'metadata';
+        video.load();
+        vo.observe(card);
 
-    function openBar(sel) {
-      barTitle.textContent = `${sel.title} — ${new Intl.NumberFormat('ru-RU').format(sel.credits)} кр.`;
-      barDetails.textContent = `SKU ${sel.sku}`;
-      barPrice.textContent = window.__mode === 'b2b' ? `${sel.price.toLocaleString('ru-RU')} ₽ без НДС` : `${sel.price.toLocaleString('ru-RU')} ₽`;
-      bar.style.transform = 'translateY(0)';
-      window.__selected = sel;
-    }
-    function closeBar() { bar.style.transform = 'translateY(100%)'; }
-    document.getElementById('closeBar')?.addEventListener('click', closeBar);
-
-    document.querySelectorAll('.selectPlan').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const card = btn.closest('.relative.p-6') || btn.closest('.preview-card') || document;
-        const titleEl = card.querySelector('.text-sm.text-gray-400,.font-medium');
-        const title = titleEl ? titleEl.textContent.trim() : 'Пакет';
-        const sel = {
-          sku: btn.getAttribute('data-sku'),
-          title: title.includes('Start')||title.includes('Pro')||title.includes('Business') ? title : (btn.getAttribute('data-sku') || 'Пакет'),
-          price: Number(btn.getAttribute('data-price')),
-          credits: Number(btn.getAttribute('data-credits'))
+        const safePlay = async () => {
+          try {
+            video.muted = true;
+            if (video.currentTime === 0) { try { video.currentTime = 0.001; } catch {} } // Safari подталкиваем
+            await video.play();
+          } catch (err) {
+            console.debug('play blocked', err);
+          }
         };
-        openBar(sel);
+        const stop = () => { video.pause(); try{ video.currentTime = 0; }catch{} };
+
+        if (!isTouch) {
+          card.addEventListener('mouseenter', safePlay);
+          card.addEventListener('mouseleave', stop);
+          card.addEventListener('click', () => { if (video.paused) safePlay(); else stop(); });
+        } else {
+          card.addEventListener('click', () => { if (video.paused) safePlay(); else stop(); });
+        }
       });
-    });
-    document.getElementById('openCheckoutTop')?.addEventListener('click', ()=>{
-      openBar({ sku:'pro-2100', title:'Pro', price:1490, credits:2100 });
-    });
 
-    document.getElementById('checkoutBtn')?.addEventListener('click', ()=>{
-      if (!window.__selected) return;
-      alert(
-        `Чекаут (демо)\nПакет: ${window.__selected.title}\nКредитов: ${window.__selected.credits}\nСумма: ${window.__selected.price.toLocaleString('ru-RU')} ₽\n\nДальше подключим оплату (СБП/ЮKassa/CloudPayments) и автозачисление кредитов.`
-      );
-    });
+      // Авто-тизер: первая карточка ~2с
+      setTimeout(() => {
+        const first = document.querySelector('.preview-card .preview-video');
+        if (first) {
+          first.play().then(() => setTimeout(() => { first.pause(); try{ first.currentTime = 0; }catch{} }, 2000)).catch(()=>{});
+        }
+      }, 800);
 
-    // Init
-    bar.style.transform = 'translateY(100%)';
+      // Переключатель Физ/Юр
+      const btnB2C = document.getElementById('btnB2C');
+      const btnB2B = document.getElementById('btnB2B');
+      function updateMode(mode) {
+        if (!btnB2C || !btnB2B) return;
+        btnB2C.classList.toggle('bg-white', mode==='b2c'); btnB2C.classList.toggle('text-black', mode==='b2c');
+        btnB2B.classList.toggle('bg-white', mode==='b2b'); btnB2B.classList.toggle('text-black', mode==='b2b');
+        document.querySelectorAll('.price').forEach(el => { el.textContent = el.getAttribute(mode==='b2b' ? 'data-b2b' : 'data-b2c'); });
+        window.__mode = mode;
+      }
+      btnB2C?.addEventListener('click', ()=>updateMode('b2c'));
+      btnB2B?.addEventListener('click', ()=>updateMode('b2b'));
+      updateMode('b2c');
+
+      // Липкая панель покупки
+      const bar = document.getElementById('stickyBar');
+      const barTitle = document.getElementById('barTitle');
+      const barDetails = document.getElementById('barDetails');
+      const barPrice = document.getElementById('barPrice');
+      function openBar(sel) {
+        if (!bar) return;
+        const fmt = new Intl.NumberFormat('ru-RU');
+        barTitle.textContent = `${sel.title} — ${fmt.format(sel.credits)} кр.`;
+        barDetails.textContent = `SKU ${sel.sku}`;
+        barPrice.textContent = window.__mode === 'b2b' ? `${sel.price.toLocaleString('ru-RU')} ₽ без НДС` : `${sel.price.toLocaleString('ru-RU')} ₽`;
+        bar.style.transform = 'translateY(0)';
+        window.__selected = sel;
+      }
+      function closeBar(){ if (bar) bar.style.transform = 'translateY(100%)'; }
+      document.getElementById('closeBar')?.addEventListener('click', closeBar);
+      document.getElementById('openCheckoutTop')?.addEventListener('click', ()=>{
+        openBar({ sku:'pro-2100', title:'Pro', price:1490, credits:2100 });
+      });
+      document.querySelectorAll('.selectPlan').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const parent = btn.closest('.relative.p-6') || btn.closest('.preview-card') || document;
+          const titleEl = parent.querySelector('.text-sm.text-gray-400,.font-medium');
+          const titleTxt = titleEl ? titleEl.textContent.trim() : 'Пакет';
+          const sel = {
+            sku: btn.getAttribute('data-sku'),
+            title: /(Start|Pro|Business)/.test(titleTxt) ? titleTxt : (btn.getAttribute('data-sku') || 'Пакет'),
+            price: Number(btn.getAttribute('data-price')),
+            credits: Number(btn.getAttribute('data-credits'))
+          };
+          openBar(sel);
+        });
+      });
+      document.getElementById('checkoutBtn')?.addEventListener('click', ()=>{
+        if (!window.__selected) return;
+        alert(`Чекаут (демо)\nПакет: ${window.__selected.title}\nКредитов: ${window.__selected.credits}\nСумма: ${window.__selected.price.toLocaleString('ru-RU')} ₽`);
+      });
+
+      if (bar) bar.style.transform = 'translateY(100%)';
+    });
   </script>
 </body>
 </html>
